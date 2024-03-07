@@ -1,21 +1,12 @@
-# THis is not feature based setup
+# Welcome to Flights Service
 
-src/
-    index.js//server
-    modes/
-    controllers/
-    middlewares/
-    services/
-    utils/(utility helpers)
-    config/(database configureation etc)
-    respository/
+## Project Setup
 
-tests/[later]
-static/
-temp/
+- clone the project on your local
+- Execute `npm install` in root directory of your project
+- Create a `.env` file in the root dir oand add the following environment variable
 
-othere folders than src folder dont need to be loaded in server for lighter booting
-that is why we use src folder seperately
+    - `PORT=3000`
 
-
+- Inside the `src/config` folder create a new file `config.json` and then add the following piece of code
 
