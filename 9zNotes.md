@@ -151,4 +151,8 @@ although i am sure that somewhere some path value needs to be changed to access 
   
 -  Change REadme file and write down details of setting up  
  
+ - Also learn how to ammend commits(if you forget to add some file to previous commit) git commit --ammend (some thing  like this)
+
+
+ - No similarly setup FlightAuthService and ReminderService in same way
  

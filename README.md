@@ -10,3 +10,8 @@
 
 - Inside the `src/config` folder create a new file `config.json` and then add the following piece of code
 
+
+
+- ONce you've added your db confiuration as listed above, go to the src folder from your terminal  ececute `npx sequelize db:create`
+
+- 
