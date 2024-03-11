@@ -24,3 +24,71 @@
 - if you check in mysql it will create two tables, one is for meta data (which migration files have been applied) 
 - You can rollback to last with adding :undo to migrate in above command
 
+
+
+const {City} = require('../models/index.js');
+
+class CityRepository {
+	async createCity({name}) 
+	{
+		try{
+			const city = await City.create({
+                name
+
+            });
+			return city;
+		} catch(error){
+			console.log("something went wrong in the repository layer")
+			throw {error};
+            //later we will gracefully 
+		}
+		
+	}
+
+	async deleteCity(cityId)
+	{
+		try{
+			await City.destroy({
+				where: {
+
+					id: cityId,
+				}
+			});
+            return true;
+		} catch(error) {
+            console.log("something went wrong in repository layer")
+			throw {error};
+		}
+	}
+
+    async updateCity(cityId,data) { //cityId for identifying which one to update and data is object what to update
+        try {
+            // there are also functions for those things
+            //first way
+            const city = await City.update(data, {
+                where : {
+                    id : cityId
+                }
+            });
+            return city;
+            // there is another method  see documentation
+
+        } catch(error) {
+            console.log("something went wrong in repository layer")
+			throw {error};
+        }
+
+    }
+
+    async getCity(cityId) {
+        try {
+            const city = await City.findByPk(cityId);
+            return city; //you should actually check here whether it has found anything
+        } catch(error) {
+            console.log("something went wrong in repository layer")
+			throw {error};
+        }
+    }
+}
+
+

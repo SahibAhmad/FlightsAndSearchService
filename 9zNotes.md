@@ -413,3 +413,16 @@ asycn deleteCity(cityId)
 
 
 
+### We have completed added city repository layer
+
+//{name:" ", otherProperty: " "} etc by destructing {name} we can directly use name property
+we can have async createCity(obj){
+    //here obj will have all the properties that our city row should have
+}
+
+const city = await City.create({name}); //this is tcp call it isn't  like native js call
+
+// this is why we need await because runtime is involved and it might be asynchronous
+- Learn about different functions for different queries
+- search model querying
+- 
