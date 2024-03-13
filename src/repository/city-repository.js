@@ -1,7 +1,10 @@
 const {City} = require('../models/index.js');
+console.log(typeof City); //should it be function or object
+//clearly we are exporting function from City.js
 
+//dont worry these must be  static methods 
 class CityRepository {
-	async createCity({name}) 
+	async createCity({name})  //we can have data here as well
 	{
 		try{
 			const city = await City.create({
