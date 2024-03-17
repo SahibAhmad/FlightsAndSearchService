@@ -1,5 +1,5 @@
 const {CityRepository} = require('../repository/index');
-
+ 
 class CityService
 {
     constructor()
@@ -39,6 +39,7 @@ class CityService
     {
         try
         {
+            
 			const response = await this.CityRepository.updateCity(cityId,data);
             return response;
 		}

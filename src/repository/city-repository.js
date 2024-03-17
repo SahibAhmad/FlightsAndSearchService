@@ -38,14 +38,25 @@ class CityRepository {
 
     async updateCity(cityId,data) { 
         try {
-         
-            const city = await City.update(data, {
-                where : {
-                    id : cityId
-                }
-            });
-            return city;
             
+            /**
+             * If we use the commented portion, it doesnt return what was updated
+             * therefore we use other method
+             * in pgsql however, we could have easily have used concept of returning true
+             * You can google about returning true sequelize mysql
+             */
+            // const city = await City.update(data, {
+            //     where : {
+            //         id : cityId
+            //     }
+            // });
+            // return city;
+
+            const city = await City.findByPk(cityId);
+            city.name = data.name;
+            await city.save();
+            
+            return city;
 
         } catch(error) {
             console.log("something went wrong in repository layer")
