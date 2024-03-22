@@ -78,11 +78,30 @@ async function getCity(req,res) {
     }
 }
 
+async function getAllCities(req,res) {
+    try {
+        const response = await cityService.getAllCities(req.query);
+        return res.status(200).json({
+            data: response,
+            success: true,
+            message: "successfully fetched all cities"
+        });
+        
+    } catch (error) {
 
+        return res.status(500).json({
+            data: error,
+            success: false,
+            message: "couldnt fetch the cities",
+        });
+        
+    }
+}
 module.exports = {
     createCity,
     deleteCity,
     updateCity,
     getCity,
+    getAllCities,
 
 }

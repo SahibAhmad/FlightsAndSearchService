@@ -25,6 +25,18 @@
 - You can rollback to last with adding :undo to migrate in above command
 
 
+## Tables
+
+### City -> id, name, created_at, updated_at
+
+### Airport -> id, name, address, city_id, created_at, update_at
+    Relationship -> City has many airports and airport belongs to a city (one to many relationship)
+
+    This is why we dont have airport column for cities, but we will have city column for airport
+
+    e
+
+
 
 
 
