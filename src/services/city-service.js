@@ -69,7 +69,7 @@ class CityService
     {
         try {
 
-            const cities = this.CityRepository.getAllCities(filter);
+            const cities = this.CityRepository.getAllCities(filter.name);
             return cities;
             
         } catch (error) {
