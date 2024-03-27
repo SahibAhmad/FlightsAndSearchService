@@ -1,6 +1,6 @@
 const {City} = require('../models/index.js');
 const {Op} = require("sequelize");
-console.log(typeof City); //should it be function or object
+
 //clearly we are exporting function from City.js
 
 //dont worry these must be  static methods 
@@ -20,6 +20,17 @@ class CityRepository {
 		}
 		
 	}
+
+    async createMultipleCities(names) 
+    {
+        try {
+            const cities = await City.bulkCreate(names);
+            return cities;
+        } catch (error) {
+            console.log("something went wrong in the repository layer");
+            throw {error};
+        }
+    }
 
 	async deleteCity(cityId)
 	{
@@ -98,6 +109,22 @@ class CityRepository {
             
         } catch (error) {
             
+            console.log("somethign went wrong in repository layer");
+            throw {error};
+        }
+    }
+
+    async getAllAirports(cityId) 
+    {
+        try {
+            
+
+            const city = await City.findByPk(cityId);
+            
+            const airports = await city.getAirports();
+            
+            return airports;
+        } catch (error) {
             console.log("somethign went wrong in repository layer");
             throw {error};
         }
