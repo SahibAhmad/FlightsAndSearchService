@@ -309,12 +309,6 @@ Below are the Sequelize models used in the backend service:
 
 This documentation provides comprehensive information on how to use the backend service API. If you have any further questions or need assistance, feel free to contact us.
 
-router.post('/flights',flightMiddlewares.validateCreateFlight,flightController.createFlight);//working
-router.get('/flights/:id',flightController.getFlight); //working
-router.get('/flights',flightController.getAllFlights); //working
-
-
-
 
 
 
