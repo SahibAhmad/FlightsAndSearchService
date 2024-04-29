@@ -28,6 +28,9 @@
 
 - ONce you've added your db confiuration as listed above, go to the src folder from your terminal  do following: 
 
+# Create database
+
+`npx sequelize db:create`
 
 # Create Tables
    ` npx sequelize db:migrate`
